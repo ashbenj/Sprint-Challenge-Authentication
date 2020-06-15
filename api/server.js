@@ -16,7 +16,7 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 server.get('/', (req, res) => {
-	res.send("It's alive!");
+	res.send('It works');
 });
 
 server.use('/api/auth', authRouter);
