@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const secret = require('../config/secret.js');
+const secret = require('../config/secrets');
 
 const Users = require('../users/users-model.js');
 
@@ -30,11 +30,9 @@ router.post('/register', (req, res) => {
 		})
 		.catch((error) => {
 			console.log(error);
-			res
-				.status(500)
-				.json({
-					errorMessage: `Username: '${user.username}' is already registered`,
-				});
+			res.status(500).json({
+				errorMessage: `Username: '${user.username}' is already registered`,
+			});
 		});
 });
 

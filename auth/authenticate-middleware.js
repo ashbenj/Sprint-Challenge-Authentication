@@ -4,7 +4,7 @@
 */
 
 const jwt = require('jsonwebtoken');
-const secret = require('../config/secret.js');
+const secret = require('../config/secrets');
 
 function restrict() {
 	const authError = {
